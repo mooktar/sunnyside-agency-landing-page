@@ -1,68 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Sunnyside agency landing page</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  About
-  Services
-  Projects
-  Contact
+    <title>Frontend Mentor | Sunnyside agency landing page</title>
 
-  We are creatives
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/boxicons/css/boxicons.min.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">sunnyside</a>
+        <button
+          class="navbar-toggler d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsible"
+          aria-controls="collapsible"
+          aria-expanded="false"
+          aria-label="menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsible">
+          <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Projects</a>
+            </li>
+          </ul>
+          <button type="button" class="btn btn-primary">Contact</button>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
 
-  Transform your brand
+    <!-- Content -->
+    <main id="main" class="main">
+      <!-- Hero -->
+      <div class="hero py-5">
+        <div class="container">
+          <h1>We are creatives</h1>
+          <img
+            src="./assets/images/icon-arrow-down.svg"
+            class="img-fluid"
+            alt="arrow down"
+          />
+        </div>
+      </div>
+      <!-- /.Hero -->
 
-  We are a full-service creative agency specializing in helping brands grow fast. 
-  Engage your clients through compelling visuals that do most of the marketing for you.
+      <!-- Features -->
+      <div class="features py-5">
+        <div class="container">
+          <!-- feature row -->
+          <div class="row justify-content-start">
+            <div class="col-md-6 feature">
+              <h2>Transform your brand</h2>
+              <p>
+                We are a full-service creative agency specializing in helping
+                brands grow fast. Engage your clients through compelling visuals
+                that do most of the marketing for you.
+              </p>
+              <a href="#">Learn more</a>
+            </div>
+          </div>
+          <!-- feature row -->
+          <div class="row justify-content-end">
+            <div class="col-md-6 feature">
+              <h2>Stand out to the right audience</h2>
+              <p>
+                Using a collaborative formula of designers, researchers,
+                photographers, videographers, and copywriters, we’ll build and
+                extend your brand in digital places.
+              </p>
+              <a href="#">Learn more</a>
+            </div>
+          </div>
+          <!-- feature row -->
+          <div class="row">
+            <div class="col-md-6 feature align-items-end">
+              <h3>Graphic design</h3>
+              <p>
+                Great design makes you memorable. We deliver artwork that
+                underscores your brand message and captures potential clients’
+                attention.
+              </p>
+            </div>
+            <!-- /.feature -->
+            <div class="col-md-6 feature align-items-end">
+              <h3>Photography</h3>
+              <p>
+                Increase your credibility by getting the most stunning,
+                high-quality photos that improve your business image.
+              </p>
+            </div>
+            <!-- /.feature -->
+          </div>
+        </div>
+      </div>
+      <!-- /.Features -->
 
-  Learn more
+      <!-- Testimonials -->
+      <div class="testimonials py-5">
+        <div class="container">
+          <h2 class="testimonials-title">Client testimonials</h2>
+          <div class="row">
+            <!-- testimonial -->
+            <div class="col-md-4 col-sm-12 testimonial">
+              <div class="card card-body">
+                <img
+                  src="./assets/images/image-emily.jpg"
+                  alt="Emily"
+                  class="img-fluid rounded-circle"
+                />
+                <p>
+                  We put our trust in Sunnyside and they delivered, making sure
+                  our needs were met and deadlines were always hit.
+                </p>
+                <h5>Emily R.</h5>
+                <small>Marketing Director</small>
+              </div>
+            </div>
+            <!-- /.testimonial -->
+            <!-- testimonial -->
+            <div class="col-md-4 col-sm-12 testimonial">
+              <div class="card card-body">
+                <img
+                  src="./assets/images/image-thomas.jpg"
+                  alt="Thomas"
+                  class="img-fluid rounded-circle"
+                />
+                <p>
+                  Sunnyside’s enthusiasm coupled with their keen interest in our
+                  brand’s success made it a satisfying and enjoyable experience.
+                </p>
+                <h5>Thomas S.</h5>
+                <small>Chief Operating Officer</small>
+              </div>
+            </div>
+            <!-- /.testimonial -->
+            <!-- testimonial -->
+            <div class="col-md-4 col-sm-12 testimonial">
+              <div class="card card-body">
+                <img
+                  src="./assets/images/image-jennie.jpg"
+                  alt="Jennie"
+                  class="img-fluid rounded-circle"
+                />
+                <p>
+                  Incredible end result! Our sales increased over 400% when we
+                  worked with Sunnyside. Highly recommended!
+                </p>
+                <h5>Jennie F.</h5>
+                <small>Business Owner</small>
+              </div>
+            </div>
+            <!-- /.testimonial -->
+          </div> <!-- /.row -->
+        </div>
+      </div>
+      <!-- /.Testimonials -->
 
-  Stand out to the right audience
+      <!-- Gallery -->
+      <div class="gallery">
+        <div class="row">
+          <div class="col-md-3 col-sm-12">
+            <img
+              src="./assets/images/desktop/image-gallery-milkbottles.jpg"
+              alt="milkbottles"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-md-3 col-sm-12">
+            <img
+              src="./assets/images/desktop/image-gallery-orange.jpg"
+              alt="orange"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-md-3 col-sm-12">
+            <img
+              src="./assets/images/desktop/image-gallery-cone.jpg"
+              alt="cone"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-md-3 col-sm-12">
+            <img
+              src="./assets/images/desktop/image-gallery-sugarcubes.jpg"
+              alt="sugarcubes"
+              class="img-fluid"
+            />
+          </div>
+        </div> <!-- /.row -->
+      </div>
+      <!-- /.Gallery -->
+    </main>
+    <!-- /.Content -->
 
-  Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places. 
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <h2 class="footer-brand">sunnyside</h2>
+        <div class="footer-nav">
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Projects</a>
+        </div>
+        <div class="footer-socials">
+          <a href="#"><i class="bx bxl-facebook"></i></a>
+          <a href="#"><i class="bx bxl-instagram"></i></a>
+          <a href="#"><i class="bx bxl-twitter"></i></a>
+          <a href="#"><i class="bx bxl-pinterest"></i></a>
+        </div>
+      </div>
+    </footer>
+    <!-- /.Footer -->
 
-  Learn more
-
-  Graphic design
-  Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’ attention.
-
-  Photography
-  Increase your credibility by getting the most stunning, high-quality photos that improve your business image.
-
-  Client testimonials
-
-  We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.
-  Emily R.
-  Marketing Director
-
-  Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.
-  Thomas S.
-  Chief Operating Officer
-
-  Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!
-  Jennie F.
-  Business Owner
-
-  About
-  Services
-  Projects
-  Contact
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <!-- JavaScript links -->
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
