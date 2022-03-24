@@ -1,0 +1,446 @@
+@import './bootstrap/bootstrap';
+
+// Colors
+$dark-blue-1: hsl(217, 28%, 15%); // intro and email sign up background
+$dark-blue-2: hsl(218, 28%, 13%); // main background
+$dark-blue-3: hsl(216, 53%, 9%); // footer background
+$dark-blue-4: hsl(219, 30%, 18%); // testimonials background
+$gradient: linear-gradient(to right, hsl(176, 68%, 64%), hsl(198, 60%, 50%));// inside call-to-action gradient
+$light-red: hsl(0, 100%, 63%); //error
+$white: hsl(0, 0%, 100%);
+$light: #fffa;
+
+
+// Layout
+$mobile: '375px';
+$desktop: '1440px';
+$mobile-screen: "only screen and (max-width: #{$mobile})";
+
+// Typography
+$font-size: '14px';
+
+// Font family
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+$raleway: 'Raleway';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+$open-sans: 'Open Sans';
+
+
+/* ================== Main Tags ================== */
+body {
+    font-family: $open-sans, sans-serif;
+    font-size: $font-size;
+    font-weight: 400;
+    background: $dark-blue-2;
+    color: $light;
+
+    @media #{$mobile-screen} {
+        width: 100vw;
+        font-size: 14px;
+    }
+}
+
+a, a:hover, a:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ================== Common classes ================== */
+.container {
+    padding: 4em 0;
+
+    @media #{$mobile-screen} {
+        padding: 3em 1rem !important;
+    }
+}
+
+
+.list-group-item {
+    background: transparent;
+    color: inherit;
+}
+
+.btn-primary,
+.bg-primary,
+.badge-primary,
+.alert-primary {
+    background-image: $gradient;
+    border: 0;
+    color: $white;
+
+    &:hover, &:focus {
+        background: $cyan-300;
+        color: $white;
+    }
+}
+
+.btn {
+    padding: 0.8em 3em;
+}
+
+.btn-link {
+    text-decoration: none;
+    color: $cyan;
+
+    &:hover {
+        text-decoration: underline;
+        color: $cyan;
+    }
+}
+
+// title font
+.intro-title,
+.feature-title,
+.how-content-title,
+.testimonial h6,
+.cta-title {
+    font-family: $raleway, sans-serif;
+    font-weight: 700;
+    color: $white;
+}
+
+
+/* ================== Navbar ================== */
+.navbar {
+    background: $dark-blue-1;
+    
+    & .container {
+        padding: 1.8em 0;
+    }
+
+    &-brand img {
+        width: 140px;
+    }
+
+    & .nav-item {
+        font-family: $raleway, sans-serif;
+        margin: 0 0.7em;
+
+        &:hover, &.active {
+            color: $white !important;
+            text-decoration: underline;
+        }
+    }
+
+    @media #{$mobile-screen} {
+        .navbar-brand {
+            width: 100px;
+        }
+
+        .nav-item {
+            margin: 0 0.2em !important;
+        }
+    }
+}
+
+
+/* ================== Intro ================== */
+.intro {
+    background: url(../images/bg-curvy-desktop.svg), $dark-blue-1;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+
+    &-img {
+        max-width: 700px;
+
+        @media #{$mobile-screen} {
+            width: 80%;
+        }
+    }
+
+    &-title, &-text {
+        max-width: 550px;
+        margin: 0 auto;
+    }
+
+    &-title {
+        margin-top: 1.1em;
+        margin-bottom: 1.3em;
+    }
+
+    &-text {
+        font-weight: 400;
+        margin-bottom: 1.5em;
+    }
+
+    &-btn {
+        margin-top: 0.7em;
+        padding-left: 5em;
+        padding-right: 5em;
+    }
+}
+
+
+/* ================== Features ================== */
+.features {
+
+    & .container {
+        padding: 1.5rem 0;
+    }
+
+    & .feature {
+        padding: 3rem 0.5rem;
+
+        &-title, &-text {
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+
+            @media #{$mobile-screen} {
+                width: 80%;
+            }
+        }
+
+        &-title {
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+
+/* ================== How it works ================== */
+.how {
+    &-img {
+        display: flex;
+        justify-content: center;
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 0.8rem;
+
+        &-title {
+            font-size: 2.6em;
+
+            @media #{$mobile-screen} {
+                font-size: 1.8em;
+                margin-top: 1.2em;
+            }
+        }
+
+        &-text {
+            margin-top: 0.8rem;
+            margin-bottom: 1.3rem;
+        }
+
+        &-btn {
+            line-height: 1.5;
+            color: $cyan;
+            text-decoration: underline;
+            &:hover, &focus {
+                color: $white;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+/* ================== Testimonials ================== */
+.testimonials {
+    & .container {
+        padding: 2rem 0 .05rem 0;
+    }
+
+    & .row {
+        padding: 2rem 0;
+        background: url(../images/bg-quotes.png) no-repeat left top;
+
+        @media #{$mobile-screen} {
+            padding: 1.5em 1em;
+            background-size: 8%;
+            background-position: 65px 10px;
+        }
+    }
+
+    & .testimonial {
+        @media #{$mobile-screen} {
+            width: 95%;
+            margin: .6em auto;
+        }
+    }
+
+    & .card {
+        background: $dark-blue-4;
+        padding: 1.4rem;
+
+        @media #{$mobile-screen} {
+            padding: 1em;
+        }
+
+        &-text {
+            margin-bottom: 1.6rem;
+        }
+
+        & img {
+            width: 40px;
+            height: auto;
+            border-radius: 50%;
+            float: left;
+            margin-right: .6rem;
+        }
+
+        & h6 {
+            margin-bottom: 0em;
+        }
+    }
+}
+
+
+/* ================== Call to action ================== */
+.cta {
+    & .container {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .row {
+        margin-top: 2em;
+        @media #{$mobile-screen} {
+            margin-top: -5em;
+        }
+    }
+
+    &-wrapper {
+        padding: 3em 5rem;
+        margin-top: -2em;
+        background: $dark-blue-1;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px #0003;
+
+        transform: translateY(40%);
+        z-index: 5;
+
+        @media #{$mobile-screen} {
+            width: 90%;
+            margin: 0 auto;
+            padding: 3em;
+        }
+    }
+
+    &-text {
+        margin-top: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    & .form-inline {
+        & .form-control {
+            margin-right: 2rem;
+
+            @media #{$mobile-screen} {
+                display: block;
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+
+        & .invalid-feedback {
+            position: absolute;
+            bottom: -30px;
+            left: 10px;
+            text-align: left;
+            color: $light-red;
+
+            @media #{$mobile-screen} {
+                left: 0;
+            }
+        }
+
+        & .btn[type='submit'] {
+            @media #{$mobile-screen} {
+                display: block;
+                width: 100%;
+                margin-top: 1.2em;
+                font-size: .8em;
+            }
+        }
+    }
+}
+
+
+/* ================== Footer ================== */
+.footer {
+    background: $dark-blue-3;
+
+    & .container {
+        padding-top: 10rem;
+
+        @media #{$mobile-screen} {
+            padding-top: 12em !important;
+            padding-bottom: 1.4em !important;
+        }
+    }
+
+    & .row {
+        & .logo-img {
+            width: 140px;
+        }
+        & .img-icon {
+            width: 18px;
+            height: auto;
+            margin-right: 1.4rem;
+        }
+    }
+
+    &-about {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+    }
+
+    &-contact .contact {
+        display: flex;
+        align-items: center;
+        padding-left: 0.3em;
+
+        & p {
+            padding: 0.5em 0 0 0;
+            align-items: center;
+        }
+    }
+
+    &-nav {
+        a:hover {
+            color: $white;
+        }
+        
+        @media #{$mobile-screen} {
+            margin-top: 1em;
+            margin-bottom: 1em;
+
+            .col-md-6 {
+                margin-bottom: 1em;
+            }
+        }
+    }
+
+    &-social {
+        display: flex;
+        justify-content: center;
+        align-self: baseline;
+
+        & a {
+            width: 35px;
+            height: 35px;
+            font-size: 1.2em;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0.5em;
+            border: 1px solid $white;
+            border-radius: 50%;
+
+            &:hover {
+                color: $cyan-300;
+                border-color: $cyan-300;
+            }
+        }
+    }
+}
