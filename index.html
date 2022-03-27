@@ -18,43 +18,60 @@
     <link rel="stylesheet" href="./assets/boxicons/css/boxicons.min.css" />
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="#">sunnyside</a>
-        <button
-          class="navbar-toggler d-lg-none"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapsible"
-          aria-controls="collapsible"
-          aria-expanded="false"
-          aria-label="menu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsible">
-          <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Projects</a>
-            </li>
-          </ul>
-          <button type="button" class="btn btn-primary">Contact</button>
-        </div>
-      </div>
-    </nav>
-    <!-- Navbar -->
+    <!-- Header -->
+    <header class="header">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-sm navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">sunnyside</a>
 
-    <!-- Content -->
-    <main id="main" class="main">
+          <!-- Desktop menu -->
+          <div class="navbar-nav ms-auto mt-2 mt-lg-0">
+            <div class="nav-item">
+              <a href="#" class="nav-link">About</a>
+            </div>
+            <div class="nav-item">
+              <a href="#" class="nav-link">Services</a>
+            </div>
+            <div class="nav-item">
+              <a href="#" class="nav-link">Projects</a>
+            </div>
+            <div class="nav-item">
+              <button type="button" class="btn btn-primary rounded-pill">
+                Contact
+              </button>
+            </div>
+          </div> <!-- /.Desktop menu -->
+
+          <!-- Mobile menu -->
+          <div class="navbar-mobile btn-group d-lg-none">
+            <button class="navbar-toggler p-0" type="button" id="mobileNav" data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="mobileNav">
+              <div class="dropdown-item">
+                <a class="" href="#">About</a>
+              </div>
+              <div class="dropdown-item">
+                <a class="" href="#">Services</a>
+              </div>
+              <div class="dropdown-item">
+                <a class="" href="#">Projects</a>
+              </div>
+              <div class="dropdown-item">
+                <button type="button" class="btn btn-warning rounded-pill">
+                  Contact
+                </button>
+              </div>
+            </div>
+          </div> <!-- /.Mobile menu -->
+        </div>
+      </nav>
+      <!-- Navbar -->
+
       <!-- Hero -->
-      <div class="hero py-5">
+      <div class="hero py-5 text-center">
         <div class="container">
           <h1>We are creatives</h1>
           <img
@@ -65,151 +82,172 @@
         </div>
       </div>
       <!-- /.Hero -->
+    </header>
+    <!-- /.Header -->
 
+    <!-- Content -->
+    <main id="main" class="main">
       <!-- Features -->
-      <div class="features py-5">
+      <div class="features">
         <div class="container">
           <!-- feature row -->
-          <div class="row justify-content-start">
-            <div class="col-md-6 feature">
-              <h2>Transform your brand</h2>
-              <p>
-                We are a full-service creative agency specializing in helping
-                brands grow fast. Engage your clients through compelling visuals
-                that do most of the marketing for you.
-              </p>
-              <a href="#">Learn more</a>
+          <div class="row features-1 align-items-stretch">
+            <div class="col-md-6 feature order-1 order-md-0">
+              <div class="container feature-text">
+                <h2>Transform your brand</h2>
+                <p>
+                  We are a full-service creative agency specializing in helping
+                  brands grow fast. Engage your clients through compelling
+                  visuals that do most of the marketing for you.
+                </p>
+                <a href="#">Learn more</a>
+              </div>
+            </div>
+
+            <div class="col-md-6 feature feature-img order-0 order-md-1">
             </div>
           </div>
+          <!-- /.row -->
+
           <!-- feature row -->
-          <div class="row justify-content-end">
+          <div class="row features-2 align-items-stretch">
+            <div class="col-md-6 feature feature-img">
+            </div>
+
             <div class="col-md-6 feature">
-              <h2>Stand out to the right audience</h2>
-              <p>
-                Using a collaborative formula of designers, researchers,
-                photographers, videographers, and copywriters, we’ll build and
-                extend your brand in digital places.
-              </p>
-              <a href="#">Learn more</a>
+              <div class="container feature-text">
+                <h2>Stand out to the right audience</h2>
+                <p>
+                  Using a collaborative formula of designers, researchers,
+                  photographers, videographers, and copywriters, we’ll build and
+                  extend your brand in digital places.
+                </p>
+                <a href="#">Learn more</a>
+              </div>
             </div>
           </div>
+          <!-- /.row -->
+
           <!-- feature row -->
-          <div class="row">
-            <div class="col-md-6 feature align-items-end">
-              <h3>Graphic design</h3>
-              <p>
-                Great design makes you memorable. We deliver artwork that
-                underscores your brand message and captures potential clients’
-                attention.
-              </p>
+          <div class="row features-3 align-items-stretch">
+            <div class="col-md-6 feature feature-design">
+              <div class="feature-text-wrap">
+                <h3>Graphic design</h3>
+                <p>
+                  Great design makes you memorable. We deliver artwork that
+                  underscores your brand message and captures potential clients’
+                  attention.
+                </p>
+              </div>
             </div>
             <!-- /.feature -->
-            <div class="col-md-6 feature align-items-end">
-              <h3>Photography</h3>
-              <p>
-                Increase your credibility by getting the most stunning,
-                high-quality photos that improve your business image.
-              </p>
+            <div class="col-md-6 feature feature-photography">
+              <div class="feature-text-wrap">
+                <h3>Photography</h3>
+                <p>
+                  Increase your credibility by getting the most stunning,
+                  high-quality photos that improve your business image.
+                </p>
+              </div>
             </div>
             <!-- /.feature -->
           </div>
+          <!-- /.row -->
         </div>
       </div>
       <!-- /.Features -->
 
       <!-- Testimonials -->
-      <div class="testimonials py-5">
+      <div class="testimonials">
         <div class="container">
           <h2 class="testimonials-title">Client testimonials</h2>
           <div class="row">
             <!-- testimonial -->
             <div class="col-md-4 col-sm-12 testimonial">
-              <div class="card card-body">
-                <img
-                  src="./assets/images/image-emily.jpg"
-                  alt="Emily"
-                  class="img-fluid rounded-circle"
-                />
-                <p>
-                  We put our trust in Sunnyside and they delivered, making sure
-                  our needs were met and deadlines were always hit.
-                </p>
-                <h5>Emily R.</h5>
-                <small>Marketing Director</small>
-              </div>
+              <img
+                src="./assets/images/image-emily.jpg"
+                alt="Emily"
+                class="img-fluid rounded-circle"
+              />
+              <p>
+                We put our trust in Sunnyside and they delivered, making sure
+                our needs were met and deadlines were always hit.
+              </p>
+              <h5>Emily R.</h5>
+              <small>Marketing Director</small>
             </div>
             <!-- /.testimonial -->
             <!-- testimonial -->
             <div class="col-md-4 col-sm-12 testimonial">
-              <div class="card card-body">
-                <img
-                  src="./assets/images/image-thomas.jpg"
-                  alt="Thomas"
-                  class="img-fluid rounded-circle"
-                />
-                <p>
-                  Sunnyside’s enthusiasm coupled with their keen interest in our
-                  brand’s success made it a satisfying and enjoyable experience.
-                </p>
-                <h5>Thomas S.</h5>
-                <small>Chief Operating Officer</small>
-              </div>
+              <img
+                src="./assets/images/image-thomas.jpg"
+                alt="Thomas"
+                class="img-fluid rounded-circle"
+              />
+              <p>
+                Sunnyside’s enthusiasm coupled with their keen interest in our
+                brand’s success made it a satisfying and enjoyable experience.
+              </p>
+              <h5>Thomas S.</h5>
+              <small>Chief Operating Officer</small>
             </div>
             <!-- /.testimonial -->
             <!-- testimonial -->
             <div class="col-md-4 col-sm-12 testimonial">
-              <div class="card card-body">
-                <img
-                  src="./assets/images/image-jennie.jpg"
-                  alt="Jennie"
-                  class="img-fluid rounded-circle"
-                />
-                <p>
-                  Incredible end result! Our sales increased over 400% when we
-                  worked with Sunnyside. Highly recommended!
-                </p>
-                <h5>Jennie F.</h5>
-                <small>Business Owner</small>
-              </div>
+              <img
+                src="./assets/images/image-jennie.jpg"
+                alt="Jennie"
+                class="img-fluid rounded-circle"
+              />
+              <p>
+                Incredible end result! Our sales increased over 400% when we
+                worked with Sunnyside. Highly recommended!
+              </p>
+              <h5>Jennie F.</h5>
+              <small>Business Owner</small>
             </div>
             <!-- /.testimonial -->
-          </div> <!-- /.row -->
+          </div>
+          <!-- /.row -->
         </div>
       </div>
       <!-- /.Testimonials -->
 
       <!-- Gallery -->
       <div class="gallery">
-        <div class="row">
-          <div class="col-md-3 col-sm-12">
-            <img
-              src="./assets/images/desktop/image-gallery-milkbottles.jpg"
-              alt="milkbottles"
-              class="img-fluid"
-            />
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-6">
+              <img
+                src="./assets/images/desktop/image-gallery-milkbottles.jpg"
+                alt="milkbottles"
+                class="img-fluid"
+              />
+            </div>
+            <div class="col-md-3 col-6">
+              <img
+                src="./assets/images/desktop/image-gallery-orange.jpg"
+                alt="orange"
+                class="img-fluid"
+              />
+            </div>
+            <div class="col-md-3 col-6">
+              <img
+                src="./assets/images/desktop/image-gallery-cone.jpg"
+                alt="cone"
+                class="img-fluid"
+              />
+            </div>
+            <div class="col-md-3 col-6">
+              <img
+                src="./assets/images/desktop/image-gallery-sugarcubes.jpg"
+                alt="sugarcubes"
+                class="img-fluid"
+              />
+            </div>
           </div>
-          <div class="col-md-3 col-sm-12">
-            <img
-              src="./assets/images/desktop/image-gallery-orange.jpg"
-              alt="orange"
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-md-3 col-sm-12">
-            <img
-              src="./assets/images/desktop/image-gallery-cone.jpg"
-              alt="cone"
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-md-3 col-sm-12">
-            <img
-              src="./assets/images/desktop/image-gallery-sugarcubes.jpg"
-              alt="sugarcubes"
-              class="img-fluid"
-            />
-          </div>
-        </div> <!-- /.row -->
+          <!-- /.row -->
+        </div>
       </div>
       <!-- /.Gallery -->
     </main>
@@ -224,8 +262,8 @@
           <a href="#">Services</a>
           <a href="#">Projects</a>
         </div>
-        <div class="footer-socials">
-          <a href="#"><i class="bx bxl-facebook"></i></a>
+        <div class="footer-social">
+          <a href="#"><i class="bx bxl-facebook-square"></i></a>
           <a href="#"><i class="bx bxl-instagram"></i></a>
           <a href="#"><i class="bx bxl-twitter"></i></a>
           <a href="#"><i class="bx bxl-pinterest"></i></a>

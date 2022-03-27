@@ -1,14 +1,21 @@
+$primary: #fff;
+
 @import './bootstrap/bootstrap';
 
 // Colors
-$dark-blue-1: hsl(217, 28%, 15%); // intro and email sign up background
-$dark-blue-2: hsl(218, 28%, 13%); // main background
-$dark-blue-3: hsl(216, 53%, 9%); // footer background
-$dark-blue-4: hsl(219, 30%, 18%); // testimonials background
-$gradient: linear-gradient(to right, hsl(176, 68%, 64%), hsl(198, 60%, 50%));// inside call-to-action gradient
-$light-red: hsl(0, 100%, 63%); //error
+$soft-red: hsl(7, 99%, 70%);
+$yellow: hsl(51, 100%, 49%);
+$dark-cyan-1: hsl(167, 40%, 24%); // graphic design text
+$dark-blue-1: hsl(198, 62%, 26%); // photography text
+$dark-cyan-2: hsl(168, 34%, 41%); // footer
+$dark-cyan-2: hsl(168, 34%, 41%); // footer
+$dark-cyan-3: #90D4C5; // footer
+// Neutral
+$dark-blue-2: hsl(212, 27%, 19%);
+$dark-blue-3: hsl(213, 9%, 39%);
+$dark-blue-4: hsl(232, 10%, 55%);
+$grayish-blue: hsl(210, 4%, 67%);
 $white: hsl(0, 0%, 100%);
-$light: #fffa;
 
 
 // Layout
@@ -17,23 +24,27 @@ $desktop: '1440px';
 $mobile-screen: "only screen and (max-width: #{$mobile})";
 
 // Typography
-$font-size: '14px';
+$font-size: '18px';
 
 // Font family
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
-$raleway: 'Raleway';
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
+@mixin barlow() {
+    font-family: 'Barlow', sans-serif;
+};
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
-$open-sans: 'Open Sans';
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&display=swap');
+@mixin fraunces() {
+    font-family: 'Fraunces', sans-serif;
+};
 
 
 /* ================== Main Tags ================== */
 body {
-    font-family: $open-sans, sans-serif;
+    @include barlow();
     font-size: $font-size;
-    font-weight: 400;
-    background: $dark-blue-2;
-    color: $light;
+    font-weight: 500;
+    color: $dark-blue-3;
+    line-height: 1.7;
 
     @media #{$mobile-screen} {
         width: 100vw;
@@ -46,197 +57,281 @@ a, a:hover, a:focus {
     color: inherit;
 }
 
+h1, h2, h3, h4, h5, h6, a {
+    @include fraunces;
+}
+
 
 /* ================== Common classes ================== */
-.container {
-    padding: 4em 0;
+.btn,
+.navbar-toggler {
+    border: none;
 
-    @media #{$mobile-screen} {
-        padding: 3em 1rem !important;
+    &:focus {
+        box-shadow: none;
     }
 }
 
 
-.list-group-item {
-    background: transparent;
-    color: inherit;
-}
-
-.btn-primary,
-.bg-primary,
-.badge-primary,
-.alert-primary {
-    background-image: $gradient;
-    border: 0;
-    color: $white;
-
-    &:hover, &:focus {
-        background: $cyan-300;
-        color: $white;
-    }
-}
-
-.btn {
-    padding: 0.8em 3em;
-}
-
-.btn-link {
-    text-decoration: none;
-    color: $cyan;
-
-    &:hover {
-        text-decoration: underline;
-        color: $cyan;
-    }
-}
-
-// title font
-.intro-title,
-.feature-title,
-.how-content-title,
-.testimonial h6,
-.cta-title {
-    font-family: $raleway, sans-serif;
-    font-weight: 700;
-    color: $white;
+/* ================== Header ================== */
+.header {
+    min-height: 100vh;
+    background: url(../images/desktop/image-header.jpg) no-repeat center center;
+    background-size: cover;
 }
 
 
 /* ================== Navbar ================== */
 .navbar {
-    background: $dark-blue-1;
+    background: transparent;
+    padding: 1.5em 0;
+    color: $white;
+
+    .container {
+        position: relative;
+    }
+
+    &-brand {
+        @include barlow();
+        font-weight: 700;
+        font-size: 2em;
+    }
+
+    &-toggler {
+        color: $white !important;
+    }
     
-    & .container {
-        padding: 1.8em 0;
-    }
-
-    &-brand img {
-        width: 140px;
-    }
-
-    & .nav-item {
-        font-family: $raleway, sans-serif;
-        margin: 0 0.7em;
-
-        &:hover, &.active {
-            color: $white !important;
-            text-decoration: underline;
-        }
-    }
-
-    @media #{$mobile-screen} {
-        .navbar-brand {
-            width: 100px;
+    &-nav {
+        @media (max-width: 576px) {
+            display: none;
         }
 
         .nav-item {
-            margin: 0 0.2em !important;
+            margin: 0 1em;
+
+            &:last-child {
+                margin-left: 0.5em;
+                margin-right: 0;
+            }
+        }
+
+        .nav-link {
+            @include barlow();
+            color: $white !important;
+            font-weight: 500;
+            font-size: 1.1em;
+    
+            &:hover, &:focus {
+                color: $white !important;
+            }
+        }
+    }
+
+    .btn {
+        margin-left: 1rem;
+        padding: 1.3em 2.6em;
+        text-transform: uppercase;
+        @include fraunces();
+        font-size: 0.8em;
+        font-weight: 600;
+
+        &-primary:hover, &-primary:focus {
+            background-image: #fff4;
+            background: #fff4;
+            border-color: #fff4;
+            color: $white;
+        }
+
+        &-warning {
+            background-image: $yellow;
+            background: $yellow;
+            color: $dark-blue-2;
+        }
+    }
+
+    &-mobile {
+        @media (min-width: 576px) {
+            display: none;
+        }
+
+        .dropdown-menu {
+            width: 92vw;
+            margin-top: 40px;
+            border: 0;
+            text-align: center;
+            padding-top: .8rem;
+            padding-bottom: .8rem;
+            border-radius: 0;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: -20px;
+                right: 0;
+                width: 0;
+                height: 0;
+                border: 20px solid transparent;
+                border-right: 0;
+                border-top: 0;
+                border-bottom-color: $white;
+                clear: both;
+            }
+        }
+
+        .dropdown-item {
+            padding-top: .8rem;
+            padding-bottom: .8rem;
+
+            &:hover {
+                background: inherit;
+            }
+
+            a {
+                @include barlow();
+                font-weight: 500;
+                font-size: 1.1em;
+                color: $dark-blue-4;
+            }
         }
     }
 }
 
 
-/* ================== Intro ================== */
-.intro {
-    background: url(../images/bg-curvy-desktop.svg), $dark-blue-1;
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: contain;
+/* ================== Hero ================== */
+.hero {
+    color: $white;
 
-    &-img {
-        max-width: 700px;
-
-        @media #{$mobile-screen} {
-            width: 80%;
-        }
-    }
-
-    &-title, &-text {
-        max-width: 550px;
-        margin: 0 auto;
-    }
-
-    &-title {
-        margin-top: 1.1em;
-        margin-bottom: 1.3em;
-    }
-
-    &-text {
-        font-weight: 400;
-        margin-bottom: 1.5em;
-    }
-
-    &-btn {
-        margin-top: 0.7em;
-        padding-left: 5em;
-        padding-right: 5em;
+    h1 {
+        text-transform: uppercase;
+        font-size: 3rem;
+        font-weight: 900;
+        letter-spacing: .1em;
+        padding-top: .8em;
+        margin-bottom: 1.2em;
     }
 }
 
 
-/* ================== Features ================== */
+/* ================== Navbar ================== */
 .features {
+    .container {
+        max-width: 100vw;
 
-    & .container {
-        padding: 1.5rem 0;
-    }
-
-    & .feature {
-        padding: 3rem 0.5rem;
-
-        &-title, &-text {
-            max-width: 450px;
-            margin-left: auto;
-            margin-right: auto;
-
-            @media #{$mobile-screen} {
-                width: 80%;
-            }
-        }
-
-        &-title {
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
+        .row {
+            padding: 0 !important;
         }
     }
-}
 
-
-/* ================== How it works ================== */
-.how {
-    &-img {
-        display: flex;
-        justify-content: center;
+    .col-md-6 {
+        margin: 0;
+        padding: 0;
     }
 
-    &-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0 0.8rem;
+    &-1 .feature-img {
+        background: url(../images/desktop/image-transform.jpg);
+    }
 
-        &-title {
-            font-size: 2.6em;
+    &-2 .feature-img {
+        background: url(../images/desktop/image-stand-out.jpg);
+    }
 
-            @media #{$mobile-screen} {
-                font-size: 1.8em;
-                margin-top: 1.2em;
-            }
+    .feature {
+        position: relative;
+        min-height: 600px;
+        margin-left: 0;
+        margin-right: 0;
+
+        &-img {
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
         }
 
         &-text {
-            margin-top: 0.8rem;
-            margin-bottom: 1.3rem;
+            width: 83%;
+            height: 100%;
+            padding: 0 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
         }
 
-        &-btn {
-            line-height: 1.5;
-            color: $cyan;
-            text-decoration: underline;
-            &:hover, &focus {
-                color: $white;
-                text-decoration: underline;
+        h2 {
+            font-size: 2.6em;
+            font-weight: 900;
+            color: $dark-blue-2;
+            margin-bottom: 0.8em;
+        }
+
+        h3 {
+            font-size: 1.6em;
+            font-weight: 900;
+            margin-bottom: .9em;
+        }
+
+        p {
+            color: $dark-blue-4;
+        }
+        
+        a {
+            margin-top: 1.2em;
+            position: relative;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            font-weight: 700;
+            color: $dark-blue-2;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 3px;
+                width: 110%;
+                height: 8px;
+                border-radius: 4px;
+                transform: translateX(-5%);
+                background: $yellow;
+                z-index: -1;
             }
+        }
+
+        &-text-wrap {
+            max-width: 350px;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            text-align: center;
+
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 3rem;
+        }
+
+        &-design {
+            background: url(../images/desktop/image-graphic-design.jpg) no-repeat center center;
+            background-size: cover;
+
+            h3, p {
+                color: $dark-cyan-1;
+            }
+        }
+
+        &-photography {
+            background: url(../images/desktop/image-photography.jpg) no-repeat center center;
+            
+            h3, p {
+                color: $dark-blue-1;
+            }
+        }
+    }
+
+    &-2 {
+        .feature a::after {
+            background: $soft-red;
         }
     }
 }
@@ -244,120 +339,58 @@ a, a:hover, a:focus {
 
 /* ================== Testimonials ================== */
 .testimonials {
-    & .container {
-        padding: 2rem 0 .05rem 0;
+    .container {
+        text-align: center;
+        padding: 8rem 0;
     }
 
-    & .row {
-        padding: 2rem 0;
-        background: url(../images/bg-quotes.png) no-repeat left top;
-
-        @media #{$mobile-screen} {
-            padding: 1.5em 1em;
-            background-size: 8%;
-            background-position: 65px 10px;
-        }
+    &-title {
+        margin-bottom: 2em;
+        font-size: 1.2em;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .2em;
+        color: $dark-blue-4;
     }
 
-    & .testimonial {
-        @media #{$mobile-screen} {
-            width: 95%;
-            margin: .6em auto;
-        }
-    }
+    .testimonial {
+        padding: 1.5em 5em;
 
-    & .card {
-        background: $dark-blue-4;
-        padding: 1.4rem;
-
-        @media #{$mobile-screen} {
-            padding: 1em;
+        img {
+            width: 75px;
+            margin-bottom: 3rem;
         }
 
-        &-text {
-            margin-bottom: 1.6rem;
+        p {
+            font-size: .9em;
+        }
+        
+        h5 {
+            margin-top: 3rem;
+            font-weight: 700;
+            font-size: 1.2em;
+            color: $dark-blue-2;
         }
 
-        & img {
-            width: 40px;
-            height: auto;
-            border-radius: 50%;
-            float: left;
-            margin-right: .6rem;
-        }
-
-        & h6 {
-            margin-bottom: 0em;
+        small {
+            font-size: 0.8em;
+            color: $dark-blue-4;
         }
     }
 }
 
 
-/* ================== Call to action ================== */
-.cta {
-    & .container {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-    }
+/* ================== Gallery ================== */
+.gallery {
+    .container {
+        max-width: 100vw;
 
-    .row {
-        margin-top: 2em;
-        @media #{$mobile-screen} {
-            margin-top: -5em;
-        }
-    }
+        .row {
+            padding: 0;
 
-    &-wrapper {
-        padding: 3em 5rem;
-        margin-top: -2em;
-        background: $dark-blue-1;
-        border-radius: 10px;
-        box-shadow: 5px 5px 5px #0003;
-
-        transform: translateY(40%);
-        z-index: 5;
-
-        @media #{$mobile-screen} {
-            width: 90%;
-            margin: 0 auto;
-            padding: 3em;
-        }
-    }
-
-    &-text {
-        margin-top: 1.2rem;
-        margin-bottom: 2rem;
-    }
-
-    & .form-inline {
-        & .form-control {
-            margin-right: 2rem;
-
-            @media #{$mobile-screen} {
-                display: block;
-                width: 100%;
-                margin-right: 0;
-            }
-        }
-
-        & .invalid-feedback {
-            position: absolute;
-            bottom: -30px;
-            left: 10px;
-            text-align: left;
-            color: $light-red;
-
-            @media #{$mobile-screen} {
-                left: 0;
-            }
-        }
-
-        & .btn[type='submit'] {
-            @media #{$mobile-screen} {
-                display: block;
-                width: 100%;
-                margin-top: 1.2em;
-                font-size: .8em;
+            & > * {
+                padding: 0;
+                margin: 0;
             }
         }
     }
@@ -366,81 +399,40 @@ a, a:hover, a:focus {
 
 /* ================== Footer ================== */
 .footer {
-    background: $dark-blue-3;
+    background: $dark-cyan-3;
+    color: $dark-cyan-1;
 
-    & .container {
-        padding-top: 10rem;
-
-        @media #{$mobile-screen} {
-            padding-top: 12em !important;
-            padding-bottom: 1.4em !important;
-        }
+    .container {
+        text-align: center;
+        padding: 4rem 0;
     }
 
-    & .row {
-        & .logo-img {
-            width: 140px;
-        }
-        & .img-icon {
-            width: 18px;
-            height: auto;
-            margin-right: 1.4rem;
-        }
+    &-brand {
+        @include barlow();
+        font-weight: 700;
+        font-size: 2em;
     }
 
-    &-about {
-        display: flex;
-        justify-content: center;
-        align-items: start;
-    }
-
-    &-contact .contact {
-        display: flex;
-        align-items: center;
-        padding-left: 0.3em;
-
-        & p {
-            padding: 0.5em 0 0 0;
-            align-items: center;
+    a {
+        transition: color .2s ease-in-out;
+        &:hover, &:focus {
+            color: $white;
         }
     }
 
     &-nav {
-        a:hover {
-            color: $white;
-        }
+        margin: 2rem 0 3.5rem 0;
         
-        @media #{$mobile-screen} {
-            margin-top: 1em;
-            margin-bottom: 1em;
-
-            .col-md-6 {
-                margin-bottom: 1em;
-            }
+        a {
+            @include barlow();
+            margin: 0.5em 1em;
         }
     }
 
     &-social {
-        display: flex;
-        justify-content: center;
-        align-self: baseline;
-
-        & a {
-            width: 35px;
-            height: 35px;
-            font-size: 1.2em;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 0.5em;
-            border: 1px solid $white;
-            border-radius: 50%;
-
-            &:hover {
-                color: $cyan-300;
-                border-color: $cyan-300;
-            }
+        a {
+            margin: 0 0.3em;
+            font-size: 1.4em;
         }
     }
 }
